@@ -238,13 +238,13 @@
     "prerelease": true,
     "assets": [
       {
-        "name": "prestashop_9.0.0 RC1.zip",
+        "name": "prestashop_9.0.0.RC1.zip",
         "path": "9.0.0 RC1/prestashop_9.0.0 RC1.zip",
         "bytes": 99435392,
         "sha256": "4c60cb3645fccbf0f243719665a50374e2264ea700d84a4aff47b58883a333df"
       },
       {
-        "name": "prestashop_9.0.0 RC1.xml",
+        "name": "prestashop_9.0.0.RC1.xml",
         "path": "9.0.0 RC1/prestashop_9.0.0 RC1.xml",
         "bytes": 2375367,
         "sha256": "fcc032ef5f7d5ba41affd2e346d7a5d0928974f8122e4bb8ff709271f1dc4dd9"

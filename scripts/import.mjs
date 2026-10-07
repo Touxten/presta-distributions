@@ -12,7 +12,7 @@ for(const row of html.split(/<tr[^>]*>/).slice(1)){
  const xml=row.match(/href="zip\/([^"]+\.xml)"/)?.[1];
  if(!xml) throw Error('Missing XML '+version);
  const zip=path.dirname(xml)+'/'+path.basename(oldZip);
- const assets=[zip,xml].map(file=>{const buffer=fs.readFileSync(path.join(archives,file));return {name:path.basename(file),path:file,bytes:buffer.length,sha256:crypto.createHash('sha256').update(buffer).digest('hex')};});
+ const assets=[zip,xml].map(file=>{const buffer=fs.readFileSync(path.join(archives,file));return {name:path.basename(file).replaceAll(" ","."),path:file,bytes:buffer.length,sha256:crypto.createHash('sha256').update(buffer).digest('hex')};});
  records.push({version,tag:'v'+version,date:row.match(/<td>([^<]+)<\/td>/)?.[1],sourceCommit:row.match(/>([a-f0-9]{40})<\/a>/)?.[1],prerelease:/alpha|beta|rc/i.test(version),assets});
 }
 if(records.length!==14) throw Error('Expected 14 releases');
