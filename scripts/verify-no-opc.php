@@ -33,7 +33,10 @@ try {
         if ($zip->locateName($secret) !== false) throw new RuntimeException('Installed/private file: ' . $secret);
     }
     foreach (['composer.json', 'composer.lock', 'vendor/composer/installed.json', 'vendor/composer/autoload_classmap.php'] as $file) {
-        if (stripos($zip->getFromName($file), 'ps_onepagecheckout') !== false) throw new RuntimeException('OPC reference in ' . $file);
+        $contents = $zip->getFromName($file);
+        // The official builder removes the root Composer manifest from releases.
+        if ($contents === false && str_starts_with($file, 'vendor/')) throw new RuntimeException('Missing runtime metadata: ' . $file);
+        if ($contents !== false && stripos($contents, 'ps_onepagecheckout') !== false) throw new RuntimeException('OPC reference in ' . $file);
     }
     echo 'Verified ZIP/XML: ' . count($paths) . " files; no OPC package, autoload or local configuration.\n";
     $zip->close();

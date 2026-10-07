@@ -4,10 +4,13 @@
     "tag": "v9.2.0-no-opc",
     "sourceVersion": "9.2.0",
     "sourceCommit": "84db6bd3a3c1612535b15b9df934afd609085423",
+    "buildCommit": "a82017b062f3c50972acfa2eec5260ecb0b9eb15",
+    "buildMethod": "tools/build/CreateRelease.php --version=9.2.0",
+    "buildRevision": 2,
     "prerelease": true,
     "assets": [
-      {"name": "prestashop_9.2.0-no-opc.zip", "bytes": 101352146, "sha256": "45af3df6159c22dedeeadf3deeb01bb7611cb1a4287fb84b1bff2cfc9b56852d"},
-      {"name": "prestashop_9.2.0-no-opc.xml", "bytes": 2715024, "sha256": "0d4fdecf500da133bbf52fb474c2604d101ac717e212a5fdff1dfdd77872ba6b"}
+      {"name": "prestashop_9.2.0-no-opc.zip", "bytes": 102308468, "sha256": "2657dd4bd04d2ed870a43c0f0612018ad33bb7c4df5192a179651c06900bd087"},
+      {"name": "prestashop_9.2.0-no-opc.xml", "bytes": 2473327, "sha256": "0e08894bd25fdca456e906f2376ca9ad427389f88d23fd84f4184d6f9b271181"}
     ]
   }
 ]

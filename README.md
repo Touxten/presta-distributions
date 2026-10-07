@@ -34,15 +34,15 @@ Les licences du logiciel et de ses dépendances restent celles incluses dans les
 ## Variante 9.2.0 sans One Page Checkout
 
 [Téléchargements ZIP, XML et SHA256SUMS](https://github.com/Touxten/presta-distributions/releases/tag/v9.2.0-no-opc).
-La version standard reste inchangée. Cette variante part de la compilation locale
-9.2.0 (commit amont `84db6bd3a3c1612535b15b9df934afd609085423`). Le paquet
+La version standard reste inchangée. Cette variante est compilée depuis le tag
+officiel 9.2.0 (commit `84db6bd3a3c1612535b15b9df934afd609085423`), avec
+`tools/build/CreateRelease.php` sans modification de l’outil. Le paquet
 `prestashop/ps_onepagecheckout` 0.6.7 a été retiré via Composer, sans mise à jour
 des autres dépendances. L’autoload et le XML de sommes de contrôle sont régénérés.
-Les métadonnées sont dans `manifests/variants.json`.
+Les métadonnées sont dans `manifests/variants.json` et la méthode complète dans
+[builds/9.2.0-no-opc.md](builds/9.2.0-no-opc.md).
 
-Variante de test : installation et mise à jour complètes non validées. Des alertes
-de sécurité ont été relevées dans les dépendances de la base utilisée ; cette
-archive n’est pas recommandée pour la production. Elle ne désinstalle pas à elle
+Installation et mise à jour complètes restent à valider. Elle ne désinstalle pas à elle
 seule un module OPC déjà présent dans une boutique existante.
 
 Vérifier le contenu de l’archive et le XML correspondant :
@@ -50,6 +50,15 @@ Vérifier le contenu de l’archive et le XML correspondant :
 ```sh
 php scripts/verify-no-opc.php prestashop_9.2.0-no-opc.zip prestashop_9.2.0-no-opc.xml
 ```
+
+## Audit des dépendances 9.2.0
+
+L’audit Composer du 7 octobre 2026 relève deux alertes moyennes sur
+`api-platform/core` 3.4.17 : [CVE-2026-54164](https://github.com/advisories/GHSA-9rjg-x2p2-h68h)
+et [CVE-2026-49858](https://github.com/advisories/GHSA-pjhx-3c3w-9v23).
+Cette dépendance provient du tag amont et n’est pas modifiée par le retrait d’OPC.
+Ces alertes ne sont donc pas spécifiques à la variante sans OPC. Leur
+exploitabilité dans la configuration PrestaShop n’a pas été établie ici.
 
 ## Site statique
 

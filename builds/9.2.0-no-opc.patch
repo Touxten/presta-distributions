@@ -1,0 +1,88 @@
+diff --git a/composer.json b/composer.json
+index 760c2fdb..16c050ac 100644
+--- a/composer.json
++++ b/composer.json
+@@ -98,7 +98,6 @@
+         "prestashop/ps_linklist": "^7",
+         "prestashop/ps_mainmenu": "^2",
+         "prestashop/ps_newproducts": "^2",
+-        "prestashop/ps_onepagecheckout": "0.6.7",
+         "prestashop/ps_searchbar": "^2",
+         "prestashop/ps_sharebuttons": "^2",
+         "prestashop/ps_shoppingcart": "^3",
+diff --git a/composer.lock b/composer.lock
+index 1499a91d..8df90e71 100644
+--- a/composer.lock
++++ b/composer.lock
+@@ -4,7 +4,7 @@
+         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+         "This file is @generated automatically"
+     ],
+-    "content-hash": "854dfc7e94b67d9c4121d868a718c999",
++    "content-hash": "f7449eb6099cba6c265420e855612459",
+     "packages": [
+         {
+             "name": "api-platform/core",
+@@ -6435,55 +6435,6 @@
+             },
+             "time": "2026-06-07T18:46:03+00:00"
+         },
+-        {
+-            "name": "prestashop/ps_onepagecheckout",
+-            "version": "v0.6.7",
+-            "source": {
+-                "type": "git",
+-                "url": "https://github.com/PrestaShop/ps_onepagecheckout.git",
+-                "reference": "93a596b040259891d2a0b4b75babfc518818d81d"
+-            },
+-            "dist": {
+-                "type": "zip",
+-                "url": "https://api.github.com/repos/PrestaShop/ps_onepagecheckout/zipball/93a596b040259891d2a0b4b75babfc518818d81d",
+-                "reference": "93a596b040259891d2a0b4b75babfc518818d81d",
+-                "shasum": ""
+-            },
+-            "require": {
+-                "php": ">=8.1"
+-            },
+-            "require-dev": {
+-                "prestashop/php-dev-tools": "^4.3"
+-            },
+-            "type": "prestashop-module",
+-            "autoload": {
+-                "psr-4": {
+-                    "PrestaShop\\Module\\PsOnePageCheckout\\": "src/"
+-                },
+-                "classmap": [
+-                    "ps_onepagecheckout.php",
+-                    "controllers/",
+-                    "src/Checkout/Ajax/"
+-                ]
+-            },
+-            "notification-url": "https://packagist.org/downloads/",
+-            "license": [
+-                "AFL-3.0"
+-            ],
+-            "authors": [
+-                {
+-                    "name": "PrestaShop SA",
+-                    "email": "contact@prestashop.com"
+-                }
+-            ],
+-            "description": "PrestaShop module ps_onepagecheckout",
+-            "homepage": "https://github.com/PrestaShop/ps_onepagecheckout",
+-            "support": {
+-                "issues": "https://github.com/PrestaShop/ps_onepagecheckout/issues",
+-                "source": "https://github.com/PrestaShop/ps_onepagecheckout/tree/v0.6.7"
+-            },
+-            "time": "2026-09-09T14:08:18+00:00"
+-        },
+         {
+             "name": "prestashop/ps_searchbar",
+             "version": "v2.1.4",
+@@ -18518,5 +18469,5 @@
+     "platform-overrides": {
+         "php": "8.1.0"
+     },
+-    "plugin-api-version": "2.3.0"
++    "plugin-api-version": "2.6.0"
+ }

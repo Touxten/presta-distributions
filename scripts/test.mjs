@@ -13,5 +13,6 @@ assert.ok(html.includes('prestashop_9.0.0.RC1.zip'));
 const variants=JSON.parse(fs.readFileSync('manifests/variants.json'));
 for(const r of variants){for(const a of r.assets){assert.match(a.sha256,/^[a-f0-9]{64}$/);assert.ok(html.includes(`/releases/download/${r.tag}/${encodeURIComponent(a.name)}`));}}
 assert.ok(html.includes('id="9.2.0-no-opc"'));
-assert.ok(html.includes('pas recommandée pour la production'));
+assert.ok(html.includes('tools/build/CreateRelease.php'));
+assert.ok(html.includes('restent à valider sur une boutique de test'));
 console.log('Catalogue: 14 versions, correct dates, asset URLs and hashes.');
