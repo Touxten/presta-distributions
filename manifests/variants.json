@@ -1,0 +1,13 @@
+[
+  {
+    "version": "9.2.0-no-opc",
+    "tag": "v9.2.0-no-opc",
+    "sourceVersion": "9.2.0",
+    "sourceCommit": "84db6bd3a3c1612535b15b9df934afd609085423",
+    "prerelease": true,
+    "assets": [
+      {"name": "prestashop_9.2.0-no-opc.zip", "bytes": 101352146, "sha256": "45af3df6159c22dedeeadf3deeb01bb7611cb1a4287fb84b1bff2cfc9b56852d"},
+      {"name": "prestashop_9.2.0-no-opc.xml", "bytes": 2715024, "sha256": "0d4fdecf500da133bbf52fb474c2604d101ac717e212a5fdff1dfdd77872ba6b"}
+    ]
+  }
+]

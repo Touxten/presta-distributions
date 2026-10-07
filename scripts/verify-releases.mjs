@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const expected=JSON.parse(fs.readFileSync('manifests/releases.json'));
+expected.push(...JSON.parse(fs.readFileSync('manifests/variants.json')));
 const actual=JSON.parse(execFileSync('gh',['api','repos/Touxten/presta-distributions/releases?per_page=100'],{encoding:'utf8'}));
 for(const r of expected){
  const release=actual.find(x=>x.tag_name===r.tag);
@@ -12,4 +13,4 @@ for(const r of expected){
  if(!publishedSum||publishedSum.digest!=='sha256:'+crypto.createHash('sha256').update(sum).digest('hex'))throw Error('SHA256SUMS mismatch: '+r.tag);
  console.log('Verified '+r.tag+' ZIP, XML and SHA256SUMS');
 }
-console.log('All 42 GitHub assets verified against the local manifest.');
+console.log(`All ${expected.length * 3} GitHub assets verified against the local manifests.`);
