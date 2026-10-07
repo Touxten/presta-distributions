@@ -1,0 +1,296 @@
+[
+  {
+    "version": "9.2.0",
+    "tag": "v9.2.0",
+    "date": "Sept 29, 2026",
+    "sourceCommit": "84db6bd3a3c1612535b15b9df934afd609085423",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.2.0.zip",
+        "path": "9.2.0/prestashop_9.2.0.zip",
+        "bytes": 102721769,
+        "sha256": "5f0df0b7aed036562f3e57d750e6986de9e2228ee43a46e45860f9a08f17a613"
+      },
+      {
+        "name": "prestashop_9.2.0.xml",
+        "path": "9.2.0/prestashop_9.2.0.xml",
+        "bytes": 2491205,
+        "sha256": "3cdd606af5a359e5bb0e0d82138cf5a768b8e1ab106f4d3e993d25450ca64f68"
+      }
+    ]
+  },
+  {
+    "version": "9.1.5",
+    "tag": "v9.1.5",
+    "date": "Aug 18, 2026",
+    "sourceCommit": "aee413eedd5fdc5053f28fb998da4b7e286cf641",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.5.zip",
+        "path": "9.1.5/prestashop_9.1.5.zip",
+        "bytes": 101268070,
+        "sha256": "a06c9848ba6960e443ef8699ed9e6beab5c557ad40207530f9dbd6a20eeaffca"
+      },
+      {
+        "name": "prestashop_9.1.5.xml",
+        "path": "9.1.5/prestashop_9.1.5.xml",
+        "bytes": 2405163,
+        "sha256": "6ed33b45dada1bfa242eef444618769ac647c257de87435ed3debb5cf637db26"
+      }
+    ]
+  },
+  {
+    "version": "9.1.4",
+    "tag": "v9.1.4",
+    "date": "Jun 4, 2026",
+    "sourceCommit": "4f7653032a0605d8dfc16515a5f3aea62dcef9b1",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.4.zip",
+        "path": "9.1.4/prestashop_9.1.4.zip",
+        "bytes": 103056400,
+        "sha256": "caa2eb2fc75d29a1d2fce147ca66a14fba5a24ee97fa0e9d9f8049880b9c1888"
+      },
+      {
+        "name": "prestashop_9.1.4.xml",
+        "path": "9.1.4/prestashop_9.1.4.xml",
+        "bytes": 2435746,
+        "sha256": "2c83d1e577ba70574df3e89c27a94efd274da33f524d9fd5375e7a95e0240520"
+      }
+    ]
+  },
+  {
+    "version": "9.1.3",
+    "tag": "v9.1.3",
+    "date": "May 21, 2026",
+    "sourceCommit": "403864627b051279a09e14bea676fc2cfc549ab1",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.3.zip",
+        "path": "9.1.3/prestashop_9.1.3.zip",
+        "bytes": 103022442,
+        "sha256": "20920c718da960b10380654642e4778ec5621a95601c80828a0496449d066037"
+      },
+      {
+        "name": "prestashop_9.1.3.xml",
+        "path": "9.1.3/prestashop_9.1.3.xml",
+        "bytes": 2435390,
+        "sha256": "ea34f06ec9a14f91a10c7ed500475836579b37d80b40e3b0428d330f4b336f50"
+      }
+    ]
+  },
+  {
+    "version": "9.1.2",
+    "tag": "v9.1.2",
+    "date": "May 19, 2026",
+    "sourceCommit": "ca8a33f23607f47332575ee1ff1c67b1cfb07ce8",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.2.zip",
+        "path": "9.1.2/prestashop_9.1.2.zip",
+        "bytes": 102980902,
+        "sha256": "0bd032691117da3cc9b8a4b3454ba27ee1729dc3f540690ba15f5391599b97bc"
+      },
+      {
+        "name": "prestashop_9.1.2.xml",
+        "path": "9.1.2/prestashop_9.1.2.xml",
+        "bytes": 2430967,
+        "sha256": "11ab0f38dd7ad2c409ed0e44f2d5f5cc35a15eea800f40908f74df79f8177be4"
+      }
+    ]
+  },
+  {
+    "version": "9.1.1",
+    "tag": "v9.1.1",
+    "date": "Apr 27, 2026",
+    "sourceCommit": "b5f0acf322d6cff2c6f063db8892888d66cba831",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.1.zip",
+        "path": "9.1.1/prestashop_9.1.1.zip",
+        "bytes": 102385979,
+        "sha256": "1d01facd16a8c9878db3baf5dfd80e3dec55bc409178409033f14fead6ec105e"
+      },
+      {
+        "name": "prestashop_9.1.1.xml",
+        "path": "9.1.1/prestashop_9.1.1.xml",
+        "bytes": 2425977,
+        "sha256": "9a61ce668dbf73317880aa0716791f76bdb1d46fc44be25cc2f44658d2c8a6c0"
+      }
+    ]
+  },
+  {
+    "version": "9.1.0",
+    "tag": "v9.1.0",
+    "date": "Mar 23, 2026",
+    "sourceCommit": "a0b49465ec19beb712d537da04d35b61a90fa587",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.0.zip",
+        "path": "9.1.0/prestashop_9.1.0.zip",
+        "bytes": 102386250,
+        "sha256": "75cb78ae10566707b70d122bb94b9f8a6f767b6c6857195c2d401a009b729e91"
+      },
+      {
+        "name": "prestashop_9.1.0.xml",
+        "path": "9.1.0/prestashop_9.1.0.xml",
+        "bytes": 2425977,
+        "sha256": "79903281841c24f7106f63e6ddf4ca57bf0d643e3752428f808d6012204477f1"
+      }
+    ]
+  },
+  {
+    "version": "9.0.3",
+    "tag": "v9.0.3",
+    "date": "Jan 7, 2026",
+    "sourceCommit": "fc96d0d4eae383e8c6f1f54f19cf592c221a62e3",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.0.3.zip",
+        "path": "9.0.3/prestashop_9.0.3.zip",
+        "bytes": 102570275,
+        "sha256": "a907d7759105efce320a9b8a6da90b44b643a5be7ee844d96a9e9ef6b3292725"
+      },
+      {
+        "name": "prestashop_9.0.3.xml",
+        "path": "9.0.3/prestashop_9.0.3.xml",
+        "bytes": 2393376,
+        "sha256": "d0a03cb035241a2938a61e9c6184000f5c6a881f0f71eb49b5189be1f625afd2"
+      }
+    ]
+  },
+  {
+    "version": "9.0.2",
+    "tag": "v9.0.2",
+    "date": "Dec 10, 2025",
+    "sourceCommit": "58870bc47e9e97e273abb941b73b42f70e29bc36",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.0.2.zip",
+        "path": "9.0.2/prestashop_9.0.2.zip",
+        "bytes": 100454159,
+        "sha256": "c2324a81df78b0c3f11f468daab6bdfc2297e15cd58bc3de3635808103beda8a"
+      },
+      {
+        "name": "prestashop_9.0.2.xml",
+        "path": "9.0.2/prestashop_9.0.2.xml",
+        "bytes": 2389503,
+        "sha256": "c5405f9cc6cb3d0807e3c6333131999d3a7c38c8894a0bcc8acead036de8c4db"
+      }
+    ]
+  },
+  {
+    "version": "9.0.1",
+    "tag": "v9.0.1",
+    "date": "Oct 13, 2025",
+    "sourceCommit": "1571ae0b264d0a12a15b4122466d7f42da661eba",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.0.1.zip",
+        "path": "9.0.1/prestashop_9.0.1.zip",
+        "bytes": 100316251,
+        "sha256": "505623a57ac8c339ee0b642d8aba69bae1e01776e988629628f699da975a74b2"
+      },
+      {
+        "name": "prestashop_9.0.1.xml",
+        "path": "9.0.1/prestashop_9.0.1.xml",
+        "bytes": 2382590,
+        "sha256": "6dcb03fb508d9e27d647aea0be5fa070b8d6b25c7583f9564f1631155ba7644a"
+      }
+    ]
+  },
+  {
+    "version": "9.0.0",
+    "tag": "v9.0.0",
+    "date": "Jun 6, 2025",
+    "sourceCommit": "f9a73d1b8567ba5b921a095b1be62c9a6b872ea8",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.0.0.zip",
+        "path": "9.0.0/prestashop_9.0.0.zip",
+        "bytes": 100014476,
+        "sha256": "350db4ffe46642c4ae577bebbcf90cf6e3b11c2d8efeca833bfdb51205b48459"
+      },
+      {
+        "name": "prestashop_9.0.0.xml",
+        "path": "9.0.0/prestashop_9.0.0.xml",
+        "bytes": 2375787,
+        "sha256": "032d95abd8b98bd027f298b37ab1dd39606b8243c0b9b5e675e8381ee78e3ae5"
+      }
+    ]
+  },
+  {
+    "version": "9.0.0-rc.1",
+    "tag": "v9.0.0-rc.1",
+    "date": "May 23, 2025",
+    "sourceCommit": "54873b946f2a2736ef0c43b1d5cf8f75c69da004",
+    "prerelease": true,
+    "assets": [
+      {
+        "name": "prestashop_9.0.0 RC1.zip",
+        "path": "9.0.0 RC1/prestashop_9.0.0 RC1.zip",
+        "bytes": 99435392,
+        "sha256": "4c60cb3645fccbf0f243719665a50374e2264ea700d84a4aff47b58883a333df"
+      },
+      {
+        "name": "prestashop_9.0.0 RC1.xml",
+        "path": "9.0.0 RC1/prestashop_9.0.0 RC1.xml",
+        "bytes": 2375367,
+        "sha256": "fcc032ef5f7d5ba41affd2e346d7a5d0928974f8122e4bb8ff709271f1dc4dd9"
+      }
+    ]
+  },
+  {
+    "version": "9.0.0-beta.1",
+    "tag": "v9.0.0-beta.1",
+    "date": "Feb 3, 2025",
+    "sourceCommit": "ffe8f5463b5bf7a3a725b4fd312b464558a184df",
+    "prerelease": true,
+    "assets": [
+      {
+        "name": "prestashop_9.0.0_Beta1.zip",
+        "path": "9.0.0_Beta1/prestashop_9.0.0_Beta1.zip",
+        "bytes": 98910065,
+        "sha256": "c111e1bf75475330e3d735819161ff86e8df68a6ade21a4705bd98ae434ea572"
+      },
+      {
+        "name": "prestashop_9.0.0_Beta1.xml",
+        "path": "9.0.0_Beta1/prestashop_9.0.0_Beta1.xml",
+        "bytes": 2373844,
+        "sha256": "22dfb6e852eb0bf48b0f6531f4a08d6b687eb16760914f024a02f6138959e306"
+      }
+    ]
+  },
+  {
+    "version": "9.0.0-alpha.1",
+    "tag": "v9.0.0-alpha.1",
+    "date": "Jun 6, 2024",
+    "sourceCommit": "f516f27536d0b52494bc2a0a927accdddce744a9",
+    "prerelease": true,
+    "assets": [
+      {
+        "name": "prestashop_9.0.0_Alpha1.zip",
+        "path": "9.0.0_Alpha1/prestashop_9.0.0_Alpha1.zip",
+        "bytes": 90660535,
+        "sha256": "dcdd9e98490fd51520cba392a11772bf91becbd88e90293737c3526d9189d721"
+      },
+      {
+        "name": "prestashop_9.0.0_Alpha1.xml",
+        "path": "9.0.0_Alpha1/prestashop_9.0.0_Alpha1.xml",
+        "bytes": 2279718,
+        "sha256": "9b7a461ef81239e20ac93768f5a26086e4d1600128b110415add9898143ab8c9"
+      }
+    ]
+  }
+]
