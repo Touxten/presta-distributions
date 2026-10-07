@@ -2,10 +2,10 @@
 
 Catalogue indépendant de compilations PrestaShop. Non affilié à PrestaShop.
 
-Les ZIP et XML historiques de presta.zip sont conservés à l'identique dans les
-Releases de ce dépôt. `manifests/releases.json` consigne leurs tailles, SHA-256
-et les références sources indiquées sur l'ancien site. Ces références historiques
-ne sont pas une attestation de reproductibilité ni une vérification de sécurité.
+Les archives ZIP et les fichiers XML sont disponibles dans les Releases de ce
+dépôt. Les archives sont compilées à partir du dépôt officiel PrestaShop, au tag
+correspondant à chaque version. Le fichier `manifests/releases.json` répertorie
+leurs tailles, leurs empreintes SHA-256 et les références du code source.
 
 ## Vérifier un téléchargement
 
