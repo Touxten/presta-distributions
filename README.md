@@ -27,21 +27,4 @@ La page historique indique utiliser l'outil `tools/build/CreateRelease.php` de
 PrestaShop. Consulter son README au tag correspondant pour les prérequis :
 https://github.com/PrestaShop/PrestaShop/tree/9.2.0/tools/build
 
-Le catalogue standard reprend les archives existantes. Les variantes personnalisées
-sont décrites séparément ci-dessous.
-Les licences du logiciel et de ses dépendances restent celles incluses dans les ZIP.
-
-## Site statique
-
-Node.js 22 ou supérieur, sans dépendance supplémentaire :
-
-```sh
-node scripts/build.mjs
-```
-
-Déployer uniquement `site/index.html`, `site/style.css`, `site/app.js` et
-`site/favicon.svg`. Les téléchargements sont des liens directs vers GitHub.
-La liste est rendue en HTML : elle reste utilisable sans JavaScript ni API GitHub.
-`scripts/import.mjs` importe l'inventaire historique et calcule les empreintes.
-
 Les anciens chemins `/zip/` sont conservés sur le serveur pour les liens existants.
