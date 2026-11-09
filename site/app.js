@@ -51,3 +51,21 @@ for (const header of sortHeaders) {
     }
   });
 }
+
+const securityDialog = document.querySelector('.security-dialog');
+if (securityDialog && typeof securityDialog.showModal === 'function') {
+  for (const trigger of document.querySelectorAll('.security summary')) {
+    trigger.setAttribute('aria-haspopup', 'dialog');
+    trigger.addEventListener('click', event => {
+      event.preventDefault();
+      const version = trigger.closest('tr').querySelector('strong').textContent;
+      securityDialog.querySelector('h2').textContent = 'Correctifs de sécurité · ' + version;
+      const content = trigger.nextElementSibling.cloneNode(true);
+      securityDialog.querySelector('.security-body').replaceChildren(content);
+      securityDialog.showModal();
+    });
+  }
+  securityDialog.addEventListener('click', event => {
+    if (event.target === securityDialog) securityDialog.close();
+  });
+}

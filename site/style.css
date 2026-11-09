@@ -9,3 +9,15 @@
 .security ul { margin: .4rem 0; padding-left: 1.1rem; }
 .security li { margin-top: .35rem; }
 .security li a { margin: 0; }
+.security summary { display: block; text-decoration: underline; text-underline-offset: 2px; }
+.security summary::-webkit-details-marker { display: none; }
+.security-dialog { padding: 0; width: min(35rem, 92vw); max-height: 80vh; border: 0; border-radius: 14px; color: var(--ink); box-shadow: 0 16px 60px #111d2e38; }
+.security-dialog[open] { display: flex; flex-direction: column; }
+.security-dialog::backdrop { background: #111d2e99; }
+.security-heading { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.4rem; border-bottom: 1px solid var(--line); }
+.security-heading h2 { margin: 0; font-size: 1.15rem; }
+.security-heading button { width: 2.5rem; height: 2.5rem; border: 0; border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 1.5rem; cursor: pointer; }
+.security-body { padding: 1rem 1.4rem; overflow: auto; overscroll-behavior: contain; font-size: .9rem; }
+.security-body ul { padding: 0; margin-bottom: 0; list-style: none; }
+.security-body li { padding: .6rem 0; border-top: 1px solid var(--line); }
+.security-body a { text-decoration: underline; text-underline-offset: 3px; }

@@ -24,6 +24,6 @@ assert.ok(communityRow?.includes('data-kind="fork"'));
 assert.ok(communityRow.includes('9.2.0 sans One Page Checkout'));
 assert.ok(communityRow.includes('/releases/tag/v9.2.0-no-opc'));
 assert.ok(communityRow.includes('/releases/download/v9.2.0-no-opc/'));
-assert.ok(communityRow.includes('Correctif de sécurité'));
+assert.ok(communityRow.includes('>2 CVE</summary>'));
 assert.ok(html.includes('https://www.cve.org/CVERecord?id=CVE-2026-71519'));
 assert.ok(html.includes('/security/advisories/GHSA-r246-6gw4-pj3p'));
