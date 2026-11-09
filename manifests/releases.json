@@ -1,5 +1,26 @@
 [
   {
+    "version": "9.2.1",
+    "tag": "v9.2.1",
+    "date": "Nov 9, 2026",
+    "sourceCommit": "384f714c3fc1329b97a581d0bf79ec330b4078f6",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.2.1.zip",
+        "path": "9.2.1/prestashop_9.2.1.zip",
+        "bytes": 104217194,
+        "sha256": "ea66c4b7d44d47048e2b50f0d197eeee019509b1a21415c8ee52ccd1bbd234a1"
+      },
+      {
+        "name": "prestashop_9.2.1.xml",
+        "path": "9.2.1/prestashop_9.2.1.xml",
+        "bytes": 2534345,
+        "sha256": "4327124d3c0f2ed1031cf4cbd95efa443d446520149ba0df970938c31405e7e6"
+      }
+    ]
+  },
+  {
     "version": "9.2.0",
     "tag": "v9.2.0",
     "date": "Sept 29, 2026",
@@ -19,6 +40,31 @@
         "sha256": "3cdd606af5a359e5bb0e0d82138cf5a768b8e1ab106f4d3e993d25450ca64f68"
       }
     ]
+  },
+  {
+    "version": "9.1.6",
+    "tag": "v9.1.6",
+    "date": "Nov 9, 2026",
+    "sourceCommit": "0a035a56eb4207fdb18718041f02de5636b9dee0",
+    "prerelease": false,
+    "assets": [
+      {
+        "name": "prestashop_9.1.6.zip",
+        "path": "9.1.6/prestashop_9.1.6.zip",
+        "bytes": 102914176,
+        "sha256": "a872b235413d1c6eab979384886dadca3d861a6c7e6003f336b9bdb32740d699"
+      },
+      {
+        "name": "prestashop_9.1.6.xml",
+        "path": "9.1.6/prestashop_9.1.6.xml",
+        "bytes": 2449425,
+        "sha256": "65bad55809ee0c4020e7be9aa8230dbaa5f7de77d37edcaaef69820c10a1b24c"
+      }
+    ],
+    "fork": true,
+    "sourceTag": "v9.1.6",
+    "sourceRepo": "https://github.com/Touxten/PrestaShop",
+    "downloadRepo": "https://github.com/Touxten/PrestaShop"
   },
   {
     "version": "9.1.5",

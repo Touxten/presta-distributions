@@ -2,9 +2,10 @@
 
 Catalogue indépendant de compilations PrestaShop. Non affilié à PrestaShop.
 
-Les archives ZIP et les fichiers XML sont disponibles dans les Releases de ce
-dépôt. Les archives sont compilées à partir du dépôt officiel PrestaShop, au tag
-correspondant à chaque version. Le fichier `manifests/releases.json` répertorie
+Les archives ZIP et les fichiers XML sont disponibles dans les releases GitHub
+liées depuis le catalogue. Les versions amont sont compilées depuis les tags
+officiels de PrestaShop. La 9.1.6 est une édition du fork Touxten, basée sur
+la 9.1.5 avec les correctifs de la 9.2.1. Le fichier `manifests/releases.json` répertorie
 leurs tailles, leurs empreintes SHA-256 et les références du code source.
 
 ## Vérifier un téléchargement
