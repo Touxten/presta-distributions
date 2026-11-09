@@ -22,7 +22,7 @@ function securityBadge(r) {
   });
   const ref = r.notes || sourceRepo(r) + '/releases/tag/' + (r.sourceTag || r.version);
   const count = new Set(fixes.map(fix => fix.cve).filter(Boolean)).size;
-  const label = count ? `${count} CVE` : `${fixes.length} avis de sécurité`;
+  const label = `${count} CVE`;
   return `<details class="security"><summary aria-label="${esc(label)} · Correctifs de sécurité de la ${esc(r.label || r.version)}">${esc(label)}</summary><div class="security-content"><a href="${esc(ref)}">Version sur GitHub ↗</a><ul>${items.join('')}</ul></div></details>`;
 }
 const byDate = [...releases, ...communityVariants].sort((a, b) => releaseDate(b) - releaseDate(a));
