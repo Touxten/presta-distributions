@@ -2,6 +2,7 @@
   {
     "version": "9.2.0-no-opc",
     "tag": "v9.2.0-no-opc",
+    "publishedOn": "2026-10-07",
     "sourceVersion": "9.2.0",
     "sourceCommit": "84db6bd3a3c1612535b15b9df934afd609085423",
     "buildCommit": "a82017b062f3c50972acfa2eec5260ecb0b9eb15",
