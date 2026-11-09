@@ -29,10 +29,12 @@ assert.ok(html.includes('https://www.cve.org/CVERecord?id=CVE-2026-71519'));
 const security = JSON.parse(fs.readFileSync('manifests/security.json'));
 for (const fixes of Object.values(security)) {
   for (const fix of fixes) {
-    assert.match(fix.cve, /^CVE-\d{4}-\d+$/);
+    if (fix.cve) assert.match(fix.cve, /^CVE-\d{4}-\d+$/);
     assert.ok(fix.source.startsWith('https://github.com/PrestaShop/PrestaShop/'));
   }
 }
 for (const version of ['9.2.1', '9.1.6']) {
-  assert.deepEqual(security[version].map(fix => fix.cve).sort(), ['CVE-2026-71519', 'CVE-2026-71531']);
+  assert.equal(new Set(security[version].map(fix => fix.source)).size, 18);
+  assert.deepEqual(security[version].map(fix => fix.cve).filter(Boolean).sort(), ['CVE-2026-71519', 'CVE-2026-71531']);
 }
+assert.equal(security['9.1.5'].length, 5);

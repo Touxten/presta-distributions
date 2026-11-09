@@ -35,6 +35,54 @@
     {
       "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-hjwq-7qvv-qxj4",
       "cve": "CVE-2026-71519"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-r246-6gw4-pj3p"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-h2q4-7fp7-m5jp"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-g6p7-cx52-hcrj"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-wrmc-gmx5-9hhc"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-99cp-c6mm-p7h5"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fxq4-2mc8-99pr"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-p292-3rh4-vm4p"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95f5-jc9c-gg3q"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-7q68-ch46-pxmc"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95w6-v2wq-cv8w"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-mgcf-mrg4-mcxv"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2676-hc74-gg7v"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-5p6p-mx64-96jf"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-8rxw-79mh-gmm5"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-6c2j-pgwm-95m9"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fg9q-mm4c-h5xc"
     }
   ],
   "9.1.6": [
@@ -45,6 +93,71 @@
     {
       "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-hjwq-7qvv-qxj4",
       "cve": "CVE-2026-71519"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-r246-6gw4-pj3p"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-h2q4-7fp7-m5jp"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-g6p7-cx52-hcrj"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-wrmc-gmx5-9hhc"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-99cp-c6mm-p7h5"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fxq4-2mc8-99pr"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-p292-3rh4-vm4p"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95f5-jc9c-gg3q"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-7q68-ch46-pxmc"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95w6-v2wq-cv8w"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-mgcf-mrg4-mcxv"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2676-hc74-gg7v"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-5p6p-mx64-96jf"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-8rxw-79mh-gmm5"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-6c2j-pgwm-95m9"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fg9q-mm4c-h5xc"
+    }
+  ],
+  "9.1.5": [
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-xrwj-pq6w-f8m4"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2cr4-vw9p-pjvf"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-jf3w-9rmr-5rcr"
+    },
+    {
+      "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-w6j9-q9rq-wrqg"
     }
   ]
 }
