@@ -7,4 +7,19 @@
 <section class="verify wrap" id="verification"><div><p class="eyebrow">LE BON RÉFLEXE</p><h2>Téléchargez.<br>Vérifiez. Installez.</h2><p>Téléchargez le ZIP et son fichier <strong>SHA256SUMS</strong> depuis la même release. Comparez ensuite l’empreinte avant de l’utiliser.</p><p class="muted">Le XML contient les sommes de contrôle utilisées par Update Assistant. Il ne remplace pas la vérification SHA-256 du téléchargement.</p></div><div class="terminal"><div class="terminal-top"><span>● ● ●</span> VÉRIFICATION LOCALE</div><div class="terminal-body"><p># Linux — dans le dossier du ZIP</p><code>sha256sum prestashop_{{LATEST}}.zip</code><p># macOS</p><code>shasum -a 256 prestashop_{{LATEST}}.zip</code><p># PowerShell</p><code>Get-FileHash .\prestashop_{{LATEST}}.zip -Algorithm SHA256</code><div class="terminal-note">Comparez le résultat à la ligne correspondante dans SHA256SUMS.</div></div></div></section>
 <!-- VARIANTS -->
 <section class="about wrap"><div class="about-icon" aria-hidden="true">{ }</div><div><h2>Communautaire. Transparent. Indépendant.</h2><p>presta.zip est une initiative indépendante de Touxten, non affiliée à PrestaShop. Ces archives sont des compilations communautaires ; elles ne sont pas des binaires officiels publiés par PrestaShop.</p><p>Ces archives sont compilées à partir du code source du dépôt officiel PrestaShop, en utilisant le tag correspondant à chaque version. Les liens vers les sources et les empreintes SHA-256 sont disponibles pour chaque téléchargement.</p><div class="about-links"><a href="https://github.com/Touxten/presta-distributions">Notre dépôt et la méthode ↗</a><a href="https://github.com/jbromain/prestashop-community">Le projet de Jean-Baptiste Romain ↗</a></div></div></section>
+<section class="about wrap" id="actualites" aria-labelledby="titre-actualites">
+<div><h2 id="titre-actualites">Actualités</h2>
+<article><p><time datetime="2026-11-09">9 novembre 2026</time></p>
+<h3>PrestaShop 9.2.1 standard</h3>
+<p>Cette compilation du tag officiel 9.2.1 intègre notamment des correctifs de sécurité pour les accès API et le webservice multiboutique.</p>
+<div class="about-links"><a href="#version-9.2.1">ZIP et XML de la 9.2.1 ↗</a><a href="https://github.com/PrestaShop/PrestaShop/releases/tag/9.2.1">Notes officielles ↗</a></div></article>
+<article><p><time datetime="2026-11-09">9 novembre 2026</time></p>
+<h3>9.1.6 communautaire Touxten</h3>
+<p>Cette édition du fork Touxten reprend les correctifs de sécurité de la 9.2.1 sur la base de la 9.1.5. La mise à jour depuis la 9.1.5 a été testée avec Update Assistant sur une boutique de démonstration.</p>
+<div class="about-links"><a href="#version-9.1.6">ZIP et XML de la 9.1.6 ↗</a><a href="https://github.com/Touxten/PrestaShop/compare/aee413eedd5fdc5053f28fb998da4b7e286cf641...v9.1.6">Voir les changements ↗</a></div></article>
+<article><p><time datetime="2026-10-07">7 octobre 2026</time></p>
+<h3>PrestaShop 9.2.0 sans One Page Checkout</h3>
+<p>Cette variante est compilée sans le module ps_onepagecheckout. Elle dispose de son propre ZIP et de son XML pour Update Assistant.</p>
+<div class="about-links"><a href="#9.2.0-no-opc">Accéder à la variante sans One Page Checkout ↗</a></div></article>
+</div></section>
 </main><footer class="wrap"><a class="brand" href="/">presta<span class="dot">.zip</span></a><p>Un projet de <a href="https://github.com/Touxten">Touxten</a> · PrestaShop est une marque de ses propriétaires respectifs.</p><a href="https://github.com/Touxten/presta-distributions/issues">Signaler un problème ↗</a></footer><script src="/app.js?v=tri1" defer></script></body></html>
