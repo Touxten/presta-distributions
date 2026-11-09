@@ -15,7 +15,7 @@ for(const r of variants){for(const a of r.assets){assert.match(a.sha256,/^[a-f0-
 assert.ok(html.includes('id="9.2.0-no-opc"'));
 assert.ok(html.includes('tools/build/CreateRelease.php'));
 assert.ok(html.includes('restent à valider sur une boutique de test'));
-assert.ok(html.includes('Fork Touxten · non officiel'));
+assert.ok(html.includes('Custom Touxten · non officielle'));
 assert.ok(html.includes('https://github.com/Touxten/PrestaShop/releases/download/v9.1.6/prestashop_9.1.6.zip'));
 assert.ok(html.includes('Télécharger la 9.2.1'));
 console.log('Catalogue verified.');
