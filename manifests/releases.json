@@ -18,7 +18,8 @@
         "bytes": 2534345,
         "sha256": "4327124d3c0f2ed1031cf4cbd95efa443d446520149ba0df970938c31405e7e6"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-2-1-security-release/"
   },
   {
     "version": "9.2.0",
@@ -39,7 +40,8 @@
         "bytes": 2491205,
         "sha256": "3cdd606af5a359e5bb0e0d82138cf5a768b8e1ab106f4d3e993d25450ca64f68"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-2-0-available/"
   },
   {
     "version": "9.1.6",
@@ -85,7 +87,8 @@
         "bytes": 2405163,
         "sha256": "6ed33b45dada1bfa242eef444618769ac647c257de87435ed3debb5cf637db26"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-5-security-release/"
   },
   {
     "version": "9.1.4",
@@ -106,7 +109,8 @@
         "bytes": 2435746,
         "sha256": "2c83d1e577ba70574df3e89c27a94efd274da33f524d9fd5375e7a95e0240520"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-4-and-8-2-7-available/"
   },
   {
     "version": "9.1.3",
@@ -127,7 +131,8 @@
         "bytes": 2435390,
         "sha256": "ea34f06ec9a14f91a10c7ed500475836579b37d80b40e3b0428d330f4b336f50"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-3-maintenance-release/"
   },
   {
     "version": "9.1.2",
@@ -148,7 +153,8 @@
         "bytes": 2430967,
         "sha256": "11ab0f38dd7ad2c409ed0e44f2d5f5cc35a15eea800f40908f74df79f8177be4"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-2-maintenance-release/"
   },
   {
     "version": "9.1.1",
@@ -169,7 +175,8 @@
         "bytes": 2425977,
         "sha256": "9a61ce668dbf73317880aa0716791f76bdb1d46fc44be25cc2f44658d2c8a6c0"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-1-security-release/"
   },
   {
     "version": "9.1.0",
@@ -190,7 +197,8 @@
         "bytes": 2425977,
         "sha256": "79903281841c24f7106f63e6ddf4ca57bf0d643e3752428f808d6012204477f1"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-1-0-available/"
   },
   {
     "version": "9.0.3",
@@ -211,7 +219,8 @@
         "bytes": 2393376,
         "sha256": "d0a03cb035241a2938a61e9c6184000f5c6a881f0f71eb49b5189be1f625afd2"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-0-3-maintenance-release/"
   },
   {
     "version": "9.0.2",
@@ -232,7 +241,9 @@
         "bytes": 2389503,
         "sha256": "c5405f9cc6cb3d0807e3c6333131999d3a7c38c8894a0bcc8acead036de8c4db"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-2-maintenance-release/",
+    "installerArticleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-2-2-1-patch-version/"
   },
   {
     "version": "9.0.1",
@@ -253,7 +264,8 @@
         "bytes": 2382590,
         "sha256": "6dcb03fb508d9e27d647aea0be5fa070b8d6b25c7583f9564f1631155ba7644a"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-1-maintenance-release/"
   },
   {
     "version": "9.0.0",
@@ -274,7 +286,8 @@
         "bytes": 2375787,
         "sha256": "032d95abd8b98bd027f298b37ab1dd39606b8243c0b9b5e675e8381ee78e3ae5"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-available/"
   },
   {
     "version": "9.0.0-rc.1",
@@ -295,7 +308,8 @@
         "bytes": 2375367,
         "sha256": "fcc032ef5f7d5ba41affd2e346d7a5d0928974f8122e4bb8ff709271f1dc4dd9"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-rc1/"
   },
   {
     "version": "9.0.0-beta.1",
@@ -316,7 +330,8 @@
         "bytes": 2373844,
         "sha256": "22dfb6e852eb0bf48b0f6531f4a08d6b687eb16760914f024a02f6138959e306"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2025/prestashop-9-0-beta-release/"
   },
   {
     "version": "9.0.0-alpha.1",
@@ -337,6 +352,7 @@
         "bytes": 2279718,
         "sha256": "9b7a461ef81239e20ac93768f5a26086e4d1600128b110415add9898143ab8c9"
       }
-    ]
+    ],
+    "articleUrl": "https://build.prestashop-project.org/news/2024/prestashop-9-alpha1-available/"
   }
 ]

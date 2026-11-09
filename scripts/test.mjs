@@ -45,3 +45,12 @@ function rowFor(version) {
 assert.ok(rowFor('9.0.1').includes('6 CVE · 27 avis au total'));
 for (const version of ['9.2.1', '9.1.6']) assert.ok(!rowFor(version).includes('<details'));
 assert.ok(rowFor('9.1.5').includes('2 CVE · 18 avis au total'));
+
+for (const r of [...data, ...variants]) {
+  const row = rowFor(r.version);
+  if (r.fork || r.sourceVersion) assert.ok(!row.includes('Article officiel'));
+  else {
+    assert.match(r.articleUrl, /^https:\/\/build\.prestashop-project\.org\/news\//);
+    assert.ok(row.includes(`href="${r.articleUrl}">Article officiel`));
+  }
+}
