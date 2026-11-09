@@ -59,7 +59,7 @@ if (securityDialog && typeof securityDialog.showModal === 'function') {
     trigger.addEventListener('click', event => {
       event.preventDefault();
       const version = trigger.closest('tr').querySelector('strong').textContent;
-      securityDialog.querySelector('h2').textContent = 'Correctifs de sécurité · ' + version;
+      securityDialog.querySelector('h2').textContent = 'Vulnérabilités recensées · ' + version;
       const content = trigger.nextElementSibling.cloneNode(true);
       securityDialog.querySelector('.security-body').replaceChildren(content);
       securityDialog.showModal();

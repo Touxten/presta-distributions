@@ -24,7 +24,7 @@ assert.ok(communityRow?.includes('data-kind="fork"'));
 assert.ok(communityRow.includes('9.2.0 sans One Page Checkout'));
 assert.ok(communityRow.includes('/releases/tag/v9.2.0-no-opc'));
 assert.ok(communityRow.includes('/releases/download/v9.2.0-no-opc/'));
-assert.ok(!communityRow.includes('class="security"'));
+assert.ok(communityRow.includes('2 CVE · 18 avis au total'));
 assert.ok(html.includes('https://www.cve.org/CVERecord?id=CVE-2026-71519'));
 const security = JSON.parse(fs.readFileSync('manifests/security.json'));
 for (const fixes of Object.values(security)) {
@@ -38,3 +38,10 @@ for (const version of ['9.2.1', '9.1.6']) {
   assert.deepEqual(security[version].map(fix => fix.cve).filter(Boolean).sort(), ['CVE-2026-71519', 'CVE-2026-71531']);
 }
 assert.equal(security['9.1.5'].length, 5);
+
+function rowFor(version) {
+  return html.split(`<tr id="version-${version}"`)[1].split('</tr>')[0];
+}
+assert.ok(rowFor('9.0.1').includes('6 CVE · 27 avis au total'));
+for (const version of ['9.2.1', '9.1.6']) assert.ok(rowFor(version).includes('Aucune CVE recensée'));
+assert.ok(rowFor('9.1.5').includes('2 CVE · 18 avis au total'));

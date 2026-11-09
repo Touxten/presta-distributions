@@ -12,18 +12,23 @@ const communityVariants = variants.map(r => ({
   ...r, fork: true, date: r.publishedOn, label: r.sourceVersion + ' sans One Page Checkout',
   notes: repo + '/releases/tag/' + r.tag
 }));
+const advisories = JSON.parse(fs.readFileSync('manifests/affected-core.json'));
+const versionOrder = new Intl.Collator('en', {numeric: true});
 function securityBadge(r) {
-  const fixes = security[r.sourceVersion || r.version];
-  if (!fixes?.length) return '';
-  const items = fixes.map(({source, cve}) => {
-    const advisory = source.match(/GHSA-[a-z0-9-]+$/)?.[0] || 'Avis de sécurité';
-    const record = cve ? `<a href="https://www.cve.org/CVERecord?id=${esc(cve)}">${esc(cve)}</a> · ` : '';
-    return `<li>${record}<a href="${esc(source)}">${esc(advisory)}</a></li>`;
+  const version = r.sourceVersion || (r.version === '9.1.6' ? '9.1.5' : r.version);
+  if (version.includes('-')) return '<p class="security">Exposition de la préversion non évaluée</p>';
+  const backports = new Set((security[r.version] || []).map(fix => fix.source));
+  const affected = advisories.filter(a => versionOrder.compare(version, a.affectedFrom) >= 0
+    && versionOrder.compare(version, a.fixedIn) < 0 && !backports.has(a.source));
+  const count = new Set(affected.map(a => a.cve).filter(Boolean)).size;
+  const label = affected.length ? `${count} CVE · ${affected.length} avis au total` : 'Aucune CVE recensée';
+  const items = affected.map(a => {
+    const record = a.cve ? `<a href="https://www.cve.org/CVERecord?id=${esc(a.cve)}">${esc(a.cve)}</a> · ` : '';
+    return `<li>${esc(a.title)}<br>${record}<a href="${esc(a.source)}">${esc(a.source.split('/').pop())}</a> · Corrigé en ${esc(a.fixedIn)}</li>`;
   });
   const ref = r.notes || sourceRepo(r) + '/releases/tag/' + (r.sourceTag || r.version);
-  const count = new Set(fixes.map(fix => fix.cve).filter(Boolean)).size;
-  const label = `${fixes.length} avis${count ? `, dont ${count} CVE` : ''}`;
-  return `<details class="security"><summary aria-label="${esc(label)} · Correctifs de sécurité de la ${esc(r.label || r.version)}">${esc(label)}</summary><div class="security-content"><a href="${esc(ref)}">Version sur GitHub ↗</a> · <a href="https://github.com/PrestaShop/PrestaShop/security/advisories">Avis officiels PrestaShop ↗</a><ul>${items.join('')}</ul></div></details>`;
+  const list = items.length ? `<ul>${items.join('')}</ul>` : '<p>Aucun avis du cœur recensé le 9 novembre 2026 ne signale cette version comme vulnérable, compte tenu des correctifs intégrés.</p>';
+  return `<details class="security"><summary aria-label="${esc(label)} · Vulnérabilités de la ${esc(r.label || r.version)}">${esc(label)}</summary><div class="security-content"><a href="${esc(ref)}">Version sur GitHub ↗</a> · <a href="https://github.com/PrestaShop/PrestaShop/security/advisories">Avis officiels PrestaShop ↗</a>${list}</div></details>`;
 }
 const byDate = [...releases, ...communityVariants].sort((a, b) => releaseDate(b) - releaseDate(a));
 const rows=byDate.map(r=>`<tr id="version-${esc(r.version)}" data-kind="${r.fork?'fork':r.prerelease?'preview':'stable'}" data-version="${esc(r.version)}" data-date="${releaseDate(r)}" data-bytes="${r.assets[0].bytes}"><td><strong>${esc(r.label || r.version)}</strong><span class="badge ${r.prerelease && !r.fork?'preview':''}">${r.fork?'Communautaire Touxten · non officielle':r.prerelease?'Préversion':'Stable'}</span>${securityBadge(r)}</td><td class="date">${new Date(r.date+' 12:00:00 UTC').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}</td><td>${(r.assets[0].bytes/1048576).toFixed(1).replace('.',',')} Mo</td><td><a class="download" href="${asset(r,r.assets[0].name)}" aria-label="Télécharger le ZIP ${esc(r.version)}">ZIP <span aria-hidden="true">↗</span></a><a href="${asset(r,r.assets[1].name)}" aria-label="Télécharger le XML ${esc(r.version)}">XML</a><a href="${asset(r,'SHA256SUMS')}" aria-label="Empreintes SHA-256 ${esc(r.version)}">SHA-256</a></td><td><a class="source" href="${r.notes || sourceRepo(r)+'/releases/tag/'+(r.sourceTag || r.version)}">Notes de version ↗</a><a class="commit" href="${sourceRepo(r)}/commit/${r.sourceCommit}">${r.sourceCommit.slice(0,8)}</a></td></tr>`).join('\n');
