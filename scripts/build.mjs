@@ -7,8 +7,24 @@ const sourceRepo=r=>r.sourceRepo || 'https://github.com/PrestaShop/PrestaShop';
 const asset=(r,a)=>`${r.downloadRepo || repo}/releases/download/${r.tag}/${encodeURIComponent(a)}`;
 const latest=releases.find(r=>!r.prerelease);
 const releaseDate = release => Date.parse(release.date + " 12:00:00 UTC");
-const byDate = [...releases].sort((a, b) => releaseDate(b) - releaseDate(a));
-const rows=byDate.map(r=>`<tr id="version-${esc(r.version)}" data-kind="${r.fork?'fork':r.prerelease?'preview':'stable'}" data-version="${esc(r.version)}" data-date="${releaseDate(r)}" data-bytes="${r.assets[0].bytes}"><td><strong>${esc(r.version)}</strong><span class="badge ${r.prerelease?'preview':''}">${r.fork?'Communautaire Touxten · non officielle':r.prerelease?'Préversion':'Stable'}</span></td><td class="date">${new Date(r.date+' 12:00:00 UTC').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}</td><td>${(r.assets[0].bytes/1048576).toFixed(1).replace('.',',')} Mo</td><td><a class="download" href="${asset(r,r.assets[0].name)}" aria-label="Télécharger le ZIP ${esc(r.version)}">ZIP <span aria-hidden="true">↗</span></a><a href="${asset(r,r.assets[1].name)}" aria-label="Télécharger le XML ${esc(r.version)}">XML</a><a href="${asset(r,'SHA256SUMS')}" aria-label="Empreintes SHA-256 ${esc(r.version)}">SHA-256</a></td><td><a class="source" href="${sourceRepo(r)}/releases/tag/${r.sourceTag || r.version}">Notes de version ↗</a><a class="commit" href="${sourceRepo(r)}/commit/${r.sourceCommit}">${r.sourceCommit.slice(0,8)}</a></td></tr>`).join('\n');
+const security = JSON.parse(fs.readFileSync('manifests/security.json'));
+const communityVariants = variants.map(r => ({
+  ...r, fork: true, date: r.publishedOn, label: r.sourceVersion + ' sans One Page Checkout',
+  notes: repo + '/releases/tag/' + r.tag
+}));
+function securityBadge(r) {
+  const fixes = security[r.sourceVersion || r.version];
+  if (!fixes?.length) return '';
+  const items = fixes.map(({source, cve}) => {
+    const advisory = source.match(/GHSA-[a-z0-9-]+$/)?.[0] || 'Avis de sécurité';
+    const record = cve ? `<a href="https://www.cve.org/CVERecord?id=${esc(cve)}">${esc(cve)}</a> · ` : '';
+    return `<li>${record}<a href="${esc(source)}">${esc(advisory)}</a></li>`;
+  });
+  const ref = r.notes || sourceRepo(r) + '/releases/tag/' + (r.sourceTag || r.version);
+  return `<details class="security"><summary>Correctif de sécurité</summary><a href="${esc(ref)}">Version sur GitHub ↗</a><ul>${items.join('')}</ul></details>`;
+}
+const byDate = [...releases, ...communityVariants].sort((a, b) => releaseDate(b) - releaseDate(a));
+const rows=byDate.map(r=>`<tr id="version-${esc(r.version)}" data-kind="${r.fork?'fork':r.prerelease?'preview':'stable'}" data-version="${esc(r.version)}" data-date="${releaseDate(r)}" data-bytes="${r.assets[0].bytes}"><td><strong>${esc(r.label || r.version)}</strong><span class="badge ${r.prerelease && !r.fork?'preview':''}">${r.fork?'Communautaire Touxten · non officielle':r.prerelease?'Préversion':'Stable'}</span>${securityBadge(r)}</td><td class="date">${new Date(r.date+' 12:00:00 UTC').toLocaleDateString('fr-FR',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'})}</td><td>${(r.assets[0].bytes/1048576).toFixed(1).replace('.',',')} Mo</td><td><a class="download" href="${asset(r,r.assets[0].name)}" aria-label="Télécharger le ZIP ${esc(r.version)}">ZIP <span aria-hidden="true">↗</span></a><a href="${asset(r,r.assets[1].name)}" aria-label="Télécharger le XML ${esc(r.version)}">XML</a><a href="${asset(r,'SHA256SUMS')}" aria-label="Empreintes SHA-256 ${esc(r.version)}">SHA-256</a></td><td><a class="source" href="${r.notes || sourceRepo(r)+'/releases/tag/'+(r.sourceTag || r.version)}">Notes de version ↗</a><a class="commit" href="${sourceRepo(r)}/commit/${r.sourceCommit}">${r.sourceCommit.slice(0,8)}</a></td></tr>`).join('\n');
 let template=fs.readFileSync('site/template.html','utf8');
 const news = [
   { date: "2026-11-09", content: `<h3>PrestaShop 9.2.1 standard</h3>
@@ -20,7 +36,7 @@ const news = [
   ...variants.map(r => ({
     id: r.version,
     date: r.publishedOn,
-    content: `<h3>PrestaShop ${esc(r.sourceVersion)} sans One Page Checkout</h3><p>Compilée depuis le tag officiel <strong>${esc(r.sourceVersion)}</strong> avec <strong>tools/build/CreateRelease.php</strong>, après retrait de <strong>ps_onepagecheckout</strong>. La version standard reste disponible ci-dessus. Le ZIP et son XML de mise à jour sont fournis ensemble.</p><p>Le ZIP et le XML sont contrôlés. L’installation et la mise à jour complètes restent à valider sur une boutique de test.</p><div class="about-links"><a href="${asset(r,r.assets[0].name)}">Télécharger le ZIP ↗</a><a href="${asset(r,r.assets[1].name)}">XML de mise à jour ↗</a><a href="${asset(r,'SHA256SUMS')}">SHA-256 ↗</a><a href="${repo}/releases/tag/${r.tag}">Détails de la variante ↗</a></div>`
+    content: `<h3>PrestaShop ${esc(r.sourceVersion)} sans One Page Checkout · édition communautaire</h3><p>Compilée depuis le tag officiel <strong>${esc(r.sourceVersion)}</strong> avec <strong>tools/build/CreateRelease.php</strong>, après retrait de <strong>ps_onepagecheckout</strong>. La version standard reste disponible ci-dessus. Le ZIP et son XML de mise à jour sont fournis ensemble.</p><p>Le ZIP et le XML sont contrôlés. L’installation et la mise à jour complètes restent à valider sur une boutique de test.</p><div class="about-links"><a href="${asset(r,r.assets[0].name)}">Télécharger le ZIP ↗</a><a href="${asset(r,r.assets[1].name)}">XML de mise à jour ↗</a><a href="${asset(r,'SHA256SUMS')}">SHA-256 ↗</a><a href="${repo}/releases/tag/${r.tag}">Détails de la variante ↗</a></div>`
   }))
 ];
 const newsDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'UTC' });
@@ -30,6 +46,6 @@ const newsHtml = news.sort((a, b) => b.date.localeCompare(a.date)).map(item => {
 ${item.content}</article>`;
 }).join('\n');
 template = template.replace('<!-- NEWS -->', newsHtml);
-template=template.replace('<!-- RELEASE_ROWS -->',rows).replace('{{COUNT}}',releases.length).replaceAll('{{LATEST}}',latest.version).replaceAll('{{LATEST_ZIP}}',asset(latest,latest.assets[0].name)).replaceAll('{{LATEST_XML}}',asset(latest,latest.assets[1].name));
+template=template.replace('<!-- RELEASE_ROWS -->',rows).replace('{{COUNT}}',byDate.length).replaceAll('{{LATEST}}',latest.version).replaceAll('{{LATEST_ZIP}}',asset(latest,latest.assets[0].name)).replaceAll('{{LATEST_XML}}',asset(latest,latest.assets[1].name));
 fs.writeFileSync('site/index.html',template);
 console.log('Built static catalogue');

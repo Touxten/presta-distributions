@@ -2,3 +2,10 @@
 
 .table-sort { appearance: none; background: transparent; border: 0; padding: .35em 0; font: inherit; color: inherit; text-transform: inherit; letter-spacing: inherit; white-space: nowrap; cursor: pointer; }
 .table-sort:hover, .table-sort:focus-visible { text-decoration: underline; }
+
+.security { margin-top: .55rem; font-size: 12px; }
+.security summary { cursor: pointer; width: fit-content; padding: .25rem .5rem; border-radius: 4px; background: #ffefd4; color: #764207; font-weight: 700; }
+.security[open] summary { margin-bottom: .5rem; }
+.security ul { margin: .4rem 0; padding-left: 1.1rem; }
+.security li { margin-top: .35rem; }
+.security li a { margin: 0; }
