@@ -116,6 +116,9 @@ const stickers = [
   ['prod', 'Je teste en prod.'],
   ['cache', 'C’est le cache.'],
   ['temporaire', 'C’est temporaire.'],
+  ['vendredi', 'On déploie vendredi.'],
+  ['feature', 'C’est une feature.'],
+  ['backup', 'Quel backup ?'],
 ];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const offscreen = 'translateY(calc(100% + 1rem))';
