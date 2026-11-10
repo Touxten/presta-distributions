@@ -108,7 +108,7 @@ for (const warning of document.querySelectorAll('.community-warning')) {
 }
 
 const punkDialog = document.querySelector('.punk-dialog');
-const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'B', 'A'];
 const stickers = [
   ['tester-douter', 'Tester, c’est douter.'],
   ['maj', 'Ne met pas à jour.'],
@@ -162,7 +162,8 @@ document.addEventListener('keydown', async event => {
     recentKeys = [];
     return;
   }
-  recentKeys.push(event.key.length === 1 ? event.key.toLowerCase() : event.key);
+  if (event.key === 'Shift' || event.key === 'CapsLock') return;
+  recentKeys.push(event.key.length === 1 ? event.key.toUpperCase() : event.key);
   if (recentKeys.length > konami.length) recentKeys.shift();
   if (konami.every((key, index) => key === recentKeys[index])) {
     recentKeys = [];
