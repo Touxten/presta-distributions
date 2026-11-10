@@ -25,3 +25,8 @@
 .community-warning { position: relative; display: inline-block; }
 .community-warning button { border: 0; font-family: inherit; cursor: help; }
 .community-tip { position: fixed; z-index: 3; top: 0; left: 0; width: 16rem; max-width: 80vw; padding: .7rem .85rem; border-radius: .5rem; background: var(--navy); color: white; font-size: .8rem; line-height: 1.45; white-space: normal; }
+
+.punk-dialog { position: fixed; inset: auto 0 0; margin: 0 auto; border: 0; padding: 0; background: transparent; width: min(90vw, 30rem); overflow: visible; }
+.punk-dialog::backdrop { background: rgb(21 28 39 / 80%); }
+.punk-dialog img { display: block; width: 100%; height: min(76dvh, 36rem); object-fit: contain; object-position: center bottom; }
+.punk-dialog button { position: absolute; right: 0; top: 0; border: 0; background: white; color: #192139; border-radius: 50%; cursor: pointer; width: 2.5rem; height: 2.5rem; font-size: 1.6rem; }

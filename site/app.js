@@ -106,3 +106,74 @@ for (const warning of document.querySelectorAll('.community-warning')) {
   window.addEventListener('scroll', hideTip, true);
   window.addEventListener('resize', hideTip);
 }
+
+const punkDialog = document.querySelector('.punk-dialog');
+const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+const stickers = [
+  ['tester', 'Tester c’est douté.'],
+  ['maj', 'Ne met pas à jour.'],
+  ['local', 'Ça marche en local.'],
+  ['prod', 'Je teste en prod.'],
+  ['cache', 'C’est le cache.'],
+  ['temporaire', 'C’est temporaire.'],
+];
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const offscreen = 'translateY(calc(100% + 1rem))';
+let loadingSticker = false;
+let closingSticker = false;
+function dismissSticker(event) {
+  event.preventDefault();
+  if (closingSticker) return;
+  if (reducedMotion.matches) {
+    punkDialog.close();
+    return;
+  }
+  closingSticker = true;
+  const from = getComputedStyle(punkDialog).transform;
+  const exit = punkDialog.animate([{transform: from}, {transform: offscreen}], {
+    duration: 300, easing: 'ease-in', fill: 'forwards'
+  });
+  exit.onfinish = () => {
+    punkDialog.close();
+    exit.cancel();
+    closingSticker = false;
+  };
+}
+punkDialog.addEventListener('cancel', dismissSticker);
+punkDialog.querySelector('form').addEventListener('submit', dismissSticker);
+let previousSticker;
+let recentKeys = [];
+document.addEventListener('keydown', async event => {
+  if (event.repeat || event.isComposing || event.ctrlKey || event.altKey || event.metaKey ||
+      event.target.closest('input, textarea, select, [contenteditable], dialog[open]')) {
+    recentKeys = [];
+    return;
+  }
+  recentKeys.push(event.key.length === 1 ? event.key.toLowerCase() : event.key);
+  if (recentKeys.length > konami.length) recentKeys.shift();
+  if (konami.every((key, index) => key === recentKeys[index])) {
+    recentKeys = [];
+    if (loadingSticker || punkDialog.open) return;
+    const mascot = punkDialog.querySelector('img');
+    const choices = stickers.filter(sticker => sticker !== previousSticker);
+    previousSticker = choices[Math.floor(Math.random() * choices.length)];
+    const [file, phrase] = previousSticker;
+    mascot.alt = 'Preston punk dit « ' + phrase + ' »';
+    mascot.src = '/preston/' + file + '.webp';
+    loadingSticker = true;
+    try {
+      await mascot.decode();
+      punkDialog.showModal();
+      if (!reducedMotion.matches) {
+        punkDialog.animate([
+          {transform: offscreen},
+          {transform: 'translateY(-2%)', offset: 0.82},
+          {transform: 'translateY(0)'}
+        ], {duration: 640, easing: 'cubic-bezier(.2,.75,.3,1)'});
+      }
+    } finally {
+      loadingSticker = false;
+    }
+  }
+});
+window.addEventListener('blur', () => { recentKeys = []; });
