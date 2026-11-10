@@ -51,7 +51,7 @@ const news = [
 <div class="about-links"><a href="#version-9.2.1">ZIP et XML de la 9.2.1 ↗</a><a href="https://github.com/PrestaShop/PrestaShop/releases/tag/9.2.1">Notes officielles ↗</a><a href="${esc(releases.find(r => r.version === '9.2.1').articleUrl)}">Article officiel ↗</a></div>` },
   { date: "2026-11-09", content: `<h3>9.1.6 communautaire de Thomas Roux</h3>
 <p>Cette édition du fork de Thomas Roux reprend les correctifs de sécurité de la 9.2.1 sur la base de la 9.1.5. La mise à jour depuis la 9.1.5 a été testée avec Update Assistant sur une boutique de démonstration.</p>
-<div class="about-links"><a href="#version-9.1.6">ZIP et XML de la 9.1.6 ↗</a><a href="https://github.com/Touxten/PrestaShop/compare/aee413eedd5fdc5053f28fb998da4b7e286cf641...v9.1.6">Voir les changements ↗</a><a href="https://github.com/Touxten/PrestaShop/releases/download/v9.1.6/rapport-tests-prestashop-9.1.6.pdf">Rapport de tests 9.1.6 (PDF) ↗</a></div>` },
+<div class="about-links"><a href="#version-9.1.6">ZIP et XML de la 9.1.6 ↗</a><a href="https://github.com/Touxten/PrestaShop/compare/aee413eedd5fdc5053f28fb998da4b7e286cf641...v9.1.6">Voir les changements ↗</a><a href="https://github.com/Touxten/presta-distributions/blob/main/rapports/tests-9.1.6.md">Rapport de tests 9.1.6 sur GitHub ↗</a></div>` },
 ];
 const newsDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'UTC' });
 const newsHtml = news.sort((a, b) => b.date.localeCompare(a.date)).map(item => {
