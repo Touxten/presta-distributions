@@ -1,6 +1,5 @@
 import fs from 'node:fs';
 const releases=JSON.parse(fs.readFileSync('manifests/releases.json'));
-const variants=JSON.parse(fs.readFileSync('manifests/variants.json'));
 const repo='https://github.com/Touxten/presta-distributions';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const sourceRepo=r=>r.sourceRepo || 'https://github.com/PrestaShop/PrestaShop';
@@ -8,10 +7,6 @@ const asset=(r,a)=>`${r.downloadRepo || repo}/releases/download/${r.tag}/${encod
 const latest=releases.find(r=>!r.prerelease);
 const releaseDate = release => Date.parse(release.date + " 12:00:00 UTC");
 const security = JSON.parse(fs.readFileSync('manifests/security.json'));
-const communityVariants = variants.map(r => ({
-  ...r, fork: true, date: r.publishedOn, label: r.sourceVersion + ' sans One Page Checkout',
-  notes: repo + '/releases/tag/' + r.tag
-}));
 const advisories = JSON.parse(fs.readFileSync('manifests/affected-core.json'));
 const versionOrder = new Intl.Collator('en', {numeric: true});
 const severityLabels = {low: 'Faible', medium: 'Modérée', high: 'Élevée', critical: 'Critique'};
@@ -33,7 +28,7 @@ function securityBadge(r) {
   const ref = r.notes || sourceRepo(r) + '/releases/tag/' + (r.sourceTag || r.version);
   return `<details class="security"><summary aria-label="${esc(label)} · Vulnérabilités de la ${esc(r.label || r.version)}">${esc(label)}</summary><div class="security-content"><a href="${esc(ref)}">Version sur GitHub ↗</a> · <a href="https://github.com/PrestaShop/PrestaShop/security/advisories">Avis officiels PrestaShop ↗</a><ul>${items.join('')}</ul></div></details>`;
 }
-const byDate = [...releases, ...communityVariants].sort((a, b) => releaseDate(b) - releaseDate(a));
+const byDate = [...releases].sort((a, b) => releaseDate(b) - releaseDate(a));
 function articleLinks(r) {
   if (!r.articleUrl) return '';
   const announcement = `<a class="source" href="${esc(r.articleUrl)}">Article officiel ↗</a>`;
@@ -57,11 +52,6 @@ const news = [
   { date: "2026-11-09", content: `<h3>9.1.6 communautaire de Thomas Roux</h3>
 <p>Cette édition du fork de Thomas Roux reprend les correctifs de sécurité de la 9.2.1 sur la base de la 9.1.5. La mise à jour depuis la 9.1.5 a été testée avec Update Assistant sur une boutique de démonstration.</p>
 <div class="about-links"><a href="#version-9.1.6">ZIP et XML de la 9.1.6 ↗</a><a href="https://github.com/Touxten/PrestaShop/compare/aee413eedd5fdc5053f28fb998da4b7e286cf641...v9.1.6">Voir les changements ↗</a></div>` },
-  ...variants.map(r => ({
-    id: r.version,
-    date: r.publishedOn,
-    content: `<h3>PrestaShop ${esc(r.sourceVersion)} sans One Page Checkout · édition communautaire</h3><p>Compilée depuis le tag officiel <strong>${esc(r.sourceVersion)}</strong> avec <strong>tools/build/CreateRelease.php</strong>, après retrait de <strong>ps_onepagecheckout</strong>. La version standard reste disponible ci-dessus. Le ZIP et son XML de mise à jour sont fournis ensemble.</p><p>Le ZIP et le XML sont contrôlés. L’installation et la mise à jour complètes restent à valider sur une boutique de test.</p><div class="about-links"><a href="${asset(r,r.assets[0].name)}">Télécharger le ZIP ↗</a><a href="${asset(r,r.assets[1].name)}">XML de mise à jour ↗</a><a href="${asset(r,'SHA256SUMS')}">SHA-256 ↗</a><a href="${repo}/releases/tag/${r.tag}">Détails de la variante ↗</a></div>`
-  }))
 ];
 const newsDate = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long', timeZone: 'UTC' });
 const newsHtml = news.sort((a, b) => b.date.localeCompare(a.date)).map(item => {

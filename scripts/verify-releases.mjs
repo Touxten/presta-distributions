@@ -2,7 +2,6 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 const expected=JSON.parse(fs.readFileSync('manifests/releases.json'));
-expected.push(...JSON.parse(fs.readFileSync('manifests/variants.json')));
 const actual=JSON.parse(execFileSync('gh',['api','repos/Touxten/presta-distributions/releases?per_page=100'],{encoding:'utf8'}));
 for(const r of expected){
  const release = r.downloadRepo
