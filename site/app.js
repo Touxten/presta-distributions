@@ -110,7 +110,7 @@ for (const warning of document.querySelectorAll('.community-warning')) {
 const punkDialog = document.querySelector('.punk-dialog');
 const konami = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 const stickers = [
-  ['tester', 'Tester c’est douté.'],
+  ['tester-douter', 'Tester, c’est douter.'],
   ['maj', 'Ne met pas à jour.'],
   ['local', 'Ça marche en local.'],
   ['prod', 'Je teste en prod.'],
