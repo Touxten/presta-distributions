@@ -124,6 +124,11 @@ const stickers = [
   ['pixel', 'Encore un pixel.'],
   ['push', 'Qui a forcé le push ?'],
   ['todo', 'Je mets un TODO.'],
+  ['branche', 'Sur quelle branche ?'],
+  ['regex', 'Une petite regex.'],
+  ['where', 'Le WHERE !'],
+  ['ticket', 'Tu as un ticket ?'],
+  ['reboot', 'Tu as redémarré ?'],
 ];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const offscreen = 'translateY(calc(100% + 1rem))';
