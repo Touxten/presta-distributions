@@ -21,3 +21,7 @@
 .security-body ul { padding: 0; margin-bottom: 0; list-style: none; }
 .security-body li { padding: .6rem 0; border-top: 1px solid var(--line); }
 .security-body a { text-decoration: underline; text-underline-offset: 3px; }
+
+.community-warning { position: relative; display: inline-block; }
+.community-warning button { border: 0; font-family: inherit; cursor: help; }
+.community-warning [role="tooltip"] { position: absolute; z-index: 3; top: 100%; left: 0; width: 16rem; max-width: 80vw; padding: .7rem .85rem; border-radius: .5rem; background: var(--navy); color: white; font-size: .8rem; line-height: 1.45; white-space: normal; }

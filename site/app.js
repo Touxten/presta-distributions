@@ -69,3 +69,21 @@ if (securityDialog && typeof securityDialog.showModal === 'function') {
     if (event.target === securityDialog) securityDialog.close();
   });
 }
+
+for (const warning of document.querySelectorAll('.community-warning')) {
+  const button = warning.querySelector('button');
+  const tip = warning.querySelector('[role="tooltip"]');
+  warning.addEventListener('pointerenter', event => {
+    if (event.pointerType === 'mouse') tip.hidden = false;
+  });
+  warning.addEventListener('pointerleave', () => { tip.hidden = true; });
+  button.addEventListener('focus', () => { tip.hidden = false; });
+  button.addEventListener('click', () => { tip.hidden = false; });
+  button.addEventListener('blur', () => { tip.hidden = true; });
+  document.addEventListener('pointerdown', event => {
+    if (!warning.contains(event.target)) tip.hidden = true;
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') tip.hidden = true;
+  });
+}
