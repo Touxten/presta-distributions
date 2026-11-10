@@ -119,6 +119,11 @@ const stickers = [
   ['vendredi', 'On déploie vendredi.'],
   ['feature', 'C’est une feature.'],
   ['backup', 'Quel backup ?'],
+  ['legacy', 'Rien à craindre, je suis en 1.6.'],
+  ['logs', 'Quelqu’un lit les logs ?'],
+  ['pixel', 'Encore un pixel.'],
+  ['push', 'Qui a forcé le push ?'],
+  ['todo', 'Je mets un TODO.'],
 ];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const offscreen = 'translateY(calc(100% + 1rem))';
