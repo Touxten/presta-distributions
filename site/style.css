@@ -24,4 +24,4 @@
 
 .community-warning { position: relative; display: inline-block; }
 .community-warning button { border: 0; font-family: inherit; cursor: help; }
-.community-warning [role="tooltip"] { position: absolute; z-index: 3; top: 100%; left: 0; width: 16rem; max-width: 80vw; padding: .7rem .85rem; border-radius: .5rem; background: var(--navy); color: white; font-size: .8rem; line-height: 1.45; white-space: normal; }
+.community-tip { position: fixed; z-index: 3; top: 0; left: 0; width: 16rem; max-width: 80vw; padding: .7rem .85rem; border-radius: .5rem; background: var(--navy); color: white; font-size: .8rem; line-height: 1.45; white-space: normal; }

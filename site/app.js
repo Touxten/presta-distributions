@@ -73,17 +73,36 @@ if (securityDialog && typeof securityDialog.showModal === 'function') {
 for (const warning of document.querySelectorAll('.community-warning')) {
   const button = warning.querySelector('button');
   const tip = warning.querySelector('[role="tooltip"]');
+  document.body.append(tip);
+  function showTip() {
+    const anchor = button.getBoundingClientRect();
+    tip.hidden = false;
+    const margin = 8;
+    const left = Math.min(anchor.left, document.documentElement.clientWidth - tip.offsetWidth - margin);
+    const top = anchor.bottom + tip.offsetHeight <= window.innerHeight - margin
+      ? anchor.bottom : anchor.top - tip.offsetHeight;
+    tip.style.left = Math.max(margin, left) + 'px';
+    tip.style.top = Math.max(margin, top) + 'px';
+  }
+  function hideTip() { tip.hidden = true; }
+  function isInside(target) { return warning.contains(target) || tip.contains(target); }
   warning.addEventListener('pointerenter', event => {
-    if (event.pointerType === 'mouse') tip.hidden = false;
+    if (event.pointerType === 'mouse') showTip();
   });
-  warning.addEventListener('pointerleave', () => { tip.hidden = true; });
-  button.addEventListener('focus', () => { tip.hidden = false; });
-  button.addEventListener('click', () => { tip.hidden = false; });
-  button.addEventListener('blur', () => { tip.hidden = true; });
+  for (const element of [warning, tip]) {
+    element.addEventListener('pointerleave', event => {
+      if (event.pointerType === 'mouse' && !isInside(event.relatedTarget)) hideTip();
+    });
+  }
+  button.addEventListener('focus', showTip);
+  button.addEventListener('click', showTip);
+  button.addEventListener('blur', hideTip);
   document.addEventListener('pointerdown', event => {
-    if (!warning.contains(event.target)) tip.hidden = true;
+    if (!isInside(event.target)) hideTip();
   });
   document.addEventListener('keydown', event => {
-    if (event.key === 'Escape') tip.hidden = true;
+    if (event.key === 'Escape') hideTip();
   });
+  window.addEventListener('scroll', hideTip, true);
+  window.addEventListener('resize', hideTip);
 }
