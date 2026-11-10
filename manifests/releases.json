@@ -1,7 +1,7 @@
 [
   {
     "version": "9.2.1",
-    "tag": "v9.2.1",
+    "tag": "v9.2.1-r2",
     "date": "Nov 9, 2026",
     "sourceCommit": "384f714c3fc1329b97a581d0bf79ec330b4078f6",
     "prerelease": false,
@@ -9,14 +9,14 @@
       {
         "name": "prestashop_9.2.1.zip",
         "path": "9.2.1/prestashop_9.2.1.zip",
-        "bytes": 104217194,
-        "sha256": "ea66c4b7d44d47048e2b50f0d197eeee019509b1a21415c8ee52ccd1bbd234a1"
+        "bytes": 104216944,
+        "sha256": "dc79fd9b125c7bdb3e1b6028d59697561cbcf624c54f09086fa687d0cb8ae749"
       },
       {
         "name": "prestashop_9.2.1.xml",
         "path": "9.2.1/prestashop_9.2.1.xml",
-        "bytes": 2534345,
-        "sha256": "4327124d3c0f2ed1031cf4cbd95efa443d446520149ba0df970938c31405e7e6"
+        "bytes": 2534269,
+        "sha256": "d3e42f26a594bd3eed18fd7f9ca56d9973825b697279fed07a151a6c14f5fbac"
       }
     ],
     "articleUrl": "https://build.prestashop-project.org/news/2026/prestashop-9-2-1-security-release/"
