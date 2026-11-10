@@ -14,6 +14,8 @@ const communityVariants = variants.map(r => ({
 }));
 const advisories = JSON.parse(fs.readFileSync('manifests/affected-core.json'));
 const versionOrder = new Intl.Collator('en', {numeric: true});
+const severityLabels = {low: 'Faible', medium: 'Modérée', high: 'Élevée', critical: 'Critique'};
+const scoreFormat = new Intl.NumberFormat('fr-FR', {minimumFractionDigits: 1});
 function securityBadge(r) {
   const version = r.sourceVersion || (r.version === '9.1.6' ? '9.1.5' : r.version);
   if (version.includes('-')) return '<p class="security">Exposition de la préversion non évaluée</p>';
@@ -25,7 +27,8 @@ function securityBadge(r) {
   const label = `${count ? count + ' CVE · ' : ''}${affected.length} avis au total`;
   const items = affected.map(a => {
     const record = a.cve ? `<a href="https://www.cve.org/CVERecord?id=${esc(a.cve)}">${esc(a.cve)}</a> · ` : '';
-    return `<li>${esc(a.title)}<br>${record}<a href="${esc(a.source)}">${esc(a.source.split('/').pop())}</a> · Corrigé en ${esc(a.fixedIn)}</li>`;
+    const rating = a.cvss ? `<b>${scoreFormat.format(a.cvss.score)}/10 · ${severityLabels[a.cvss.severity]}</b> (CVSS ${esc(a.cvss.version)})<br>` : '';
+    return `<li>${esc(a.title)}<br>${rating}${record}<a href="${esc(a.source)}">${esc(a.source.split('/').pop())}</a> · Corrigé en ${esc(a.fixedIn)}</li>`;
   });
   const ref = r.notes || sourceRepo(r) + '/releases/tag/' + (r.sourceTag || r.version);
   return `<details class="security"><summary aria-label="${esc(label)} · Vulnérabilités de la ${esc(r.label || r.version)}">${esc(label)}</summary><div class="security-content"><a href="${esc(ref)}">Version sur GitHub ↗</a> · <a href="https://github.com/PrestaShop/PrestaShop/security/advisories">Avis officiels PrestaShop ↗</a><ul>${items.join('')}</ul></div></details>`;

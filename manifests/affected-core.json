@@ -4,188 +4,323 @@
     "title": "Cart rule usage limits can be bypassed through a race condition in order validation",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.5,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-h2q4-7fp7-m5jp",
     "title": "Unauthenticated PHP object injection in the installer session cookie leads to remote code execution",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.1,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-g6p7-cx52-hcrj",
     "title": "Predictable password reset token allows a customer account takeover when the customer secure key is known",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 4.8,
+      "version": "3.1",
+      "severity": "medium"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-wrmc-gmx5-9hhc",
     "title": "Path traversal in attachments allows file read and deletion outside the download directory",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.5,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-99cp-c6mm-p7h5",
     "title": "Stored XSS through SVG files uploaded with the back-office file manager and logo uploader",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.7,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fxq4-2mc8-99pr",
     "title": "Arbitrary file inclusion through the module parameter of the back-office translations page allows code execution",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-p292-3rh4-vm4p",
     "title": "Admin API client holding api_client_write can grant itself any scope, leading to code execution",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.8,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95f5-jc9c-gg3q",
     "title": "PHP code injection through the back-office Debug Mode cookie fields allows an employee with only the Performance permissions to execute arbitrary code",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-7q68-ch46-pxmc",
     "title": "Path traversal in theme and module import allows an authenticated administrator to write files outside the intended folder (RCE)",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-95w6-v2wq-cv8w",
     "title": "Remote code execution through the theme \"Import from the web\" feature (unrestricted file write to the admin directory)",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-mgcf-mrg4-mcxv",
     "title": "Back-office employees with create-only order permission can modify existing orders",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 4.9,
+      "version": "3.1",
+      "severity": "medium"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2676-hc74-gg7v",
     "title": "Duplicate orders can be created from a single cart through a race condition in free-order checkout",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.5,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-5p6p-mx64-96jf",
     "title": "Path traversal in back-office email translations allows arbitrary file write leading to remote code execution",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-8rxw-79mh-gmm5",
     "title": "Installer can be re-run without an already-installed check, allowing configuration overwrite",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.1,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-6c2j-pgwm-95m9",
     "title": "Admin API client disable and access-token revocation are ineffective",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 7.1,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-fg9q-mm4c-h5xc",
     "title": "Unauthenticated disclosure of a customer's customization file upload via order reference (authorization bypass in UploadController)",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 5.9,
+      "version": "3.1",
+      "severity": "medium"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-hjwq-7qvv-qxj4",
     "title": "Webservice API cross-tenant customer takeover via missing record-level shop check",
     "cve": "CVE-2026-71519",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.1,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-3f36-4qv4-vfgh",
     "title": "Webservice API multishop scope bypass via id_shop=all / id_shop_group",
     "cve": "CVE-2026-71531",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.2.1"
+    "fixedIn": "9.2.1",
+    "cvss": {
+      "score": 8.1,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-xrwj-pq6w-f8m4",
     "title": "Server-Side Request Forgery through image URLs in the CSV import",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.5"
+    "fixedIn": "9.1.5",
+    "cvss": {
+      "score": 8.2,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-2cr4-vw9p-pjvf",
     "title": "Client IP address can be spoofed through the X-Forwarded-For header",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.5"
+    "fixedIn": "9.1.5",
+    "cvss": {
+      "score": 7.3,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-whxq-pxj5-qq7v",
     "title": "SQL injection through back-office list filters",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.5"
+    "fixedIn": "9.1.5",
+    "cvss": {
+      "score": 6.5,
+      "version": "3.1",
+      "severity": "medium"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-jf3w-9rmr-5rcr",
     "title": "Improper access control on the back-office notifications endpoint exposes customer data",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.5"
+    "fixedIn": "9.1.5",
+    "cvss": {
+      "score": 4.3,
+      "version": "3.1",
+      "severity": "medium"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-w6j9-q9rq-wrqg",
     "title": "Formula injection in CSV exports (CSV injection)",
     "cve": null,
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.5"
+    "fixedIn": "9.1.5",
+    "cvss": {
+      "score": 8.0,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-w9f3-qc75-qgx9",
     "title": "CWE-79: Stored XSS executable in customer service view",
     "cve": "CVE-2026-44212",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.1"
+    "fixedIn": "9.1.1",
+    "cvss": {
+      "score": 9.3,
+      "version": "3.1",
+      "severity": "critical"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-283w-xf3q-788v",
     "title": "Fix improper use of validation framework (CWE-1173)",
     "cve": "CVE-2026-33674",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.0"
+    "fixedIn": "9.1.0",
+    "cvss": {
+      "score": 2.0,
+      "version": "3.1",
+      "severity": "low"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-35pf-37c6-jxjv",
     "title": "CWE 79: Prevent multiple stored xss exploitation via unprotected variables in template",
     "cve": "CVE-2026-33673",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.1.0"
+    "fixedIn": "9.1.0",
+    "cvss": {
+      "score": 7.6,
+      "version": "3.1",
+      "severity": "high"
+    }
   },
   {
     "source": "https://github.com/PrestaShop/PrestaShop/security/advisories/GHSA-67v7-3g49-mxh2",
     "title": "Time based enumeration in FO login form",
     "cve": "CVE-2026-25597",
     "affectedFrom": "9.0.0",
-    "fixedIn": "9.0.3"
+    "fixedIn": "9.0.3",
+    "cvss": {
+      "score": 5.3,
+      "version": "3.1",
+      "severity": "medium"
+    }
   }
 ]
