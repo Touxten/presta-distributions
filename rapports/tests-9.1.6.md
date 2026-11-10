@@ -46,4 +46,4 @@ Quatre gestes ont été vérifiés dans Chrome sur une grille utilisant le compo
 
 ## Limites de la campagne
 
-La campagne ne couvre ni les essais de charge, ni une recette exhaustive des modules tiers, ni le parcours de paiement réel. Le thème et les personnalisations du back-office distant n’ont pas fait l’objet d’une recette utilisateur.
+La campagne ne couvre ni les essais de charge, ni une recette exhaustive des modules tiers, ni le parcours de paiement réel.
